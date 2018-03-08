@@ -98,13 +98,13 @@ Then run:
 
 ```bash
 # run with docker
-whalesay.py jobstore -m 'hello world' --docker docker/whalesay
+python whalesay.py jobstore -m 'hello world' --docker docker/whalesay --volumes local_path abs_container_path
 
 # run with singularity
-whalesay.py jobstore -m 'hello world' --singularity docker://docker/whalesay
+python whalesay.py jobstore -m 'hello world' --singularity docker://docker/whalesay
 
 # if cowsay is available in the environment
-whalesay.py jobstore -m 'hello world'
+python whalesay.py jobstore -m 'hello world'
 ```
 
 If you want to convert a docker image into a [singularity] image instead of using the `docker://` prefix, check [docker2singularity], and use `-m '/shared-fs-path /shared-fs-path'` to make sure your shared file system is mounted inside the singularity image.
